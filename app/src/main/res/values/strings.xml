@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">CPM</string>
+    <string name="enter_passcode">Enter Passcode...</string>
+    <string name="empty"></string>
+    <string name="incorrect">"Passcode Incorrect, try again."</string>
+    <string name="e">E</string>
+    <string name="t">T</string>
+    <string name="a">A</string>
+    <string name="o">O</string>
+    <string name="n">N</string>
+    <string name="r">R</string>
+    <string name="i">I</string>
+    <string name="s">S</string>
+    <string name="h">H</string>
+    <string name="zero">0</string>
+    <string name="one">1</string>
+    <string name="two">2</string>
+    <string name="star">*</string>
+    <string name="hash">#</string>
+    <string name="percent">%</string>
+    <string name="at">\@</string>
+    <string name="clear">Clear</string>
+    <string name="enter">Enter</string>
+</resources>
