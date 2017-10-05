@@ -470,6 +470,7 @@
     <string name="star">*</string>
     <string name="status_bar_notification_info_overflow">999+</string>
     <string name="t">T</string>
+    <string name="textview">TextView</string>
     <string name="two">2</string>
     <string name="zero">0</string>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>
