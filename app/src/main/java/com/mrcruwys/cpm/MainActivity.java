@@ -2,6 +2,9 @@ package com.mrcruwys.cpm;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.widget.TextView;
 
 import com.google.firebase.database.ChildEventListener;
@@ -17,33 +20,40 @@ public class MainActivity extends AppCompatActivity {
 
     private DatabaseReference mDatabase;
     private ArrayList<DBEntry> entries;
-    private TextView mText;
+    private DBEntryAdapter entryAdapter;
+    //private TextView mText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mText = (TextView) findViewById(R.id.text_temp);
+
 
         entries = new ArrayList<>();
         mDatabase = FirebaseDatabase.getInstance().getReference();
         mDatabase.child("Entries").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                for (DataSnapshot snpSht : dataSnapshot.getChildren()) {
-                    final DBEntry tempEntry = new DBEntry(snpSht.getKey());
-                    for (DataSnapshot entry : snpSht.getChildren()) {
-                        tempEntry.addPair(entry.getKey(), (String)entry.getValue());
+            public void onDataChange(DataSnapshot dsAllEntries) {
+                for (DataSnapshot dsSingleEntry : dsAllEntries.getChildren()) {
+                    final DBEntry tEntry = new DBEntry(dsSingleEntry.getKey());
+                    for (DataSnapshot dsFields : dsSingleEntry.getChildren()) {
+                        tEntry.addPair(dsFields.getKey(), (String)dsFields.getValue());
                     }
-                    entries.add(tempEntry);
+                    entries.add(tEntry);
                 }
                 // All entries loaded...go ahead and do your stuff!
-                //mText.setText(entries.get(0).getName());
+                RecyclerView pwordList = (RecyclerView) findViewById(R.id.pwList);
+                LinearLayoutManager pwListManager = new LinearLayoutManager(getApplicationContext());
+                pwListManager.setOrientation(LinearLayoutManager.VERTICAL);
+                pwordList.setLayoutManager(pwListManager);
+                pwordList.setItemAnimator(new DefaultItemAnimator());
+                entryAdapter = new DBEntryAdapter(entries);
+                pwordList.setAdapter(entryAdapter);
+                entryAdapter.notifyDataSetChanged();
             }
             @Override
             public void onCancelled(DatabaseError databaseError) {}
         });
-
     }
 }

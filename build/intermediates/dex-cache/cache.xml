@@ -12,6 +12,15 @@
     </item>
     <item
         is-multidex="true"
+        jar="C:\Users\Colb\.android\build-cache\0a9282e873711c355b11ffb7f83046c53309d74e\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="95519720620b553f63afc789beba9ad582807f7c">
+        <dex dex="C:\Users\Colb\AndroidStudioProjects\CPM\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_760f00bd3741c46d13ef4be5bc193a884cafb58e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="C:\Users\Colb\AndroidStudioProjects\CPM\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         optimize="true"

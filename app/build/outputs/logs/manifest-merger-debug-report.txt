@@ -70,6 +70,7 @@ MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\Colb\.
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Colb\.android\build-cache\41037933810a09b2e2a89abf456c34967429babf\output\AndroidManifest.xml:5:5-7:41
 MERGED from [com.google.firebase:firebase-database:10.0.1] C:\Users\Colb\.android\build-cache\ccd2823d4c15cc8e8d00670d4b2500f1652a18e0\output\AndroidManifest.xml:3:5-42
 MERGED from [com.google.firebase:firebase-database-connection:10.0.1] C:\Users\Colb\.android\build-cache\eba23852714dfc7b0410ae9464d8c59e49ad4b74\output\AndroidManifest.xml:3:5-42
+MERGED from [com.android.support:recyclerview-v7:25.3.1] C:\Users\Colb\.android\build-cache\0a9282e873711c355b11ffb7f83046c53309d74e\output\AndroidManifest.xml:20:5-43
 MERGED from [com.google.firebase:firebase-core:10.0.1] C:\Users\Colb\.android\build-cache\e1852078e771277bea3e553c045602c9bde6df91\output\AndroidManifest.xml:4:5-42
 MERGED from [com.google.firebase:firebase-analytics:10.0.1] C:\Users\Colb\.android\build-cache\090570d646be35a02feacf6f9f1cb83c9a0645e0\output\AndroidManifest.xml:17:5-42
 MERGED from [com.google.firebase:firebase-analytics-impl:10.0.1] C:\Users\Colb\.android\build-cache\651e83544c385c41db71b693336d3789e5550aa9\output\AndroidManifest.xml:17:5-42
@@ -95,6 +96,7 @@ meta-data#android.support.VERSION
 ADDED from [com.android.support:appcompat-v7:25.3.1] C:\Users\Colb\.android\build-cache\2e68c1cb634d682ba6c861f2895f28e957386ac7\output\AndroidManifest.xml:25:5-27:34
 MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\Colb\.android\build-cache\8e58ff4f4f446e4fd3f5bfd6350c72567c4f2e7f\output\AndroidManifest.xml:22:5-24:34
 MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\Colb\.android\build-cache\60e7321f54e1b051a83676ec0257a4a85bd5bd51\output\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:recyclerview-v7:25.3.1] C:\Users\Colb\.android\build-cache\0a9282e873711c355b11ffb7f83046c53309d74e\output\AndroidManifest.xml:22:5-24:34
 MERGED from [com.android.support:support-v4:25.3.1] C:\Users\Colb\.android\build-cache\9db9ef0d3667ec350edab4248c47e70c8d45f435\output\AndroidManifest.xml:25:5-27:34
 MERGED from [com.android.support:support-fragment:25.3.1] C:\Users\Colb\.android\build-cache\d7b36dc3fe916841dec924924687d2bf5485949a\output\AndroidManifest.xml:25:5-27:34
 MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\Colb\.android\build-cache\fb163a2a21648fdf1de829b8ce43c9d4b1ba7cc0\output\AndroidManifest.xml:25:5-27:34

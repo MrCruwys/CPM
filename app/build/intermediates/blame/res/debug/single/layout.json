@@ -136,6 +136,10 @@
         "source": "C:\\Users\\Colb\\.android\\build-cache\\2e68c1cb634d682ba6c861f2895f28e957386ac7\\output\\res\\layout\\abc_list_menu_item_layout.xml"
     },
     {
+        "merged": "C:\\Users\\Colb\\AndroidStudioProjects\\CPM\\app\\build\\intermediates\\res\\merged\\debug\\layout\\entry_row.xml",
+        "source": "C:\\Users\\Colb\\AndroidStudioProjects\\CPM\\app\\src\\main\\res\\layout\\entry_row.xml"
+    },
+    {
         "merged": "C:\\Users\\Colb\\AndroidStudioProjects\\CPM\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_item_layout.xml",
         "source": "C:\\Users\\Colb\\.android\\build-cache\\2e68c1cb634d682ba6c861f2895f28e957386ac7\\output\\res\\layout\\abc_action_menu_item_layout.xml"
     },
