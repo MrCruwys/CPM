@@ -1,5 +1,6 @@
 package com.mrcruwys.cpm;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Paint;
 import android.support.v7.app.AppCompatActivity;
@@ -49,6 +50,8 @@ public class MainActivity extends AppCompatActivity {
             R.id.txt_pairv5,
     };
     public static final String EXTRA_MESSAGE = "com.mrcruwys.cpm.MESSAGE";
+    private static final int ADD_REQUEST = 1;
+    private static final int EDIT_REQUEST = 2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
                 Bundle b = new Bundle();
                 b.putParcelable(EXTRA_MESSAGE, entries.get(selectedPos));
                 i.putExtras(b);
-                startActivity(i);
+                startActivityForResult(i, EDIT_REQUEST);
             }
         });
         mAdd = (Button) findViewById(R.id.btn_addnew);
@@ -87,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(MainActivity.this, ModifyActivity.class);
-                startActivity(i);
+                startActivityForResult(i, ADD_REQUEST);
             }
         });
 
@@ -130,5 +133,23 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onCancelled(DatabaseError databaseError) {}
         });
+    }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        if (requestCode == ADD_REQUEST) {
+            if(resultCode == Activity.RESULT_OK){
+                DBEntry tempEntry = (DBEntry)data.getExtras().get(EXTRA_MESSAGE);
+                mDatabase.child("Entries").child(tempEntry.getName()).setValue("");
+                for (DBPair pairs : tempEntry.getPairs()) {
+                    mDatabase.child("Entries").child(tempEntry.getName()).child(pairs.getKey()).setValue(pairs.getValue());
+                }
+            }
+            if (resultCode == Activity.RESULT_CANCELED) {
+                //Write your code if there's no result
+            }
+        } else if(requestCode == EDIT_REQUEST) {
+
+        }
     }
 }
