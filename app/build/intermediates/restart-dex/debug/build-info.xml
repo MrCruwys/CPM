@@ -6,30 +6,30 @@
     density="xxhdpi"
     format="10"
     plugin-version="2.3.3"
-    timestamp="1507266608256"
+    timestamp="1507432610291"
     token="-6464444153160511501"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="0" />
+        duration="662" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="0" />
+        duration="37" />
     <task
         name="verifier"
-        duration="0" />
+        duration="13" />
 
     <artifact
-        location="C:\Users\Colb\AndroidStudioProjects\CPM\app\build\outputs\apk\app-debug.apk"
-        type="SPLIT_MAIN" />
+        location="C:\Users\Colb\AndroidStudioProjects\CPM\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
+        type="SPLIT" />
 
     <build
         build-mode="FULL"
-        timestamp="1507266315115"
+        timestamp="1507424855717"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="C:\Users\Colb\AndroidStudioProjects\CPM\app\build\outputs\apk\app-debug.apk"
@@ -70,11 +70,30 @@
     </build>
     <build
         build-mode="COLD"
-        timestamp="1507266608256"
+        timestamp="1507427605277"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="C:\Users\Colb\AndroidStudioProjects\CPM\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\Colb\AndroidStudioProjects\CPM\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
+            type="SPLIT" />
+    </build>
+    <build
+        build-mode="COLD"
+        timestamp="1507431404215"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="C:\Users\Colb\AndroidStudioProjects\CPM\app\build\outputs\apk\app-debug.apk"
             type="SPLIT_MAIN" />
+    </build>
+    <build
+        build-mode="COLD"
+        timestamp="1507432610291"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="C:\Users\Colb\AndroidStudioProjects\CPM\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
+            type="SPLIT" />
     </build>
 
 </instant-run>

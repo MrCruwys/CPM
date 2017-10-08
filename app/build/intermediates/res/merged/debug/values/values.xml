@@ -156,6 +156,7 @@
     <color name="secondary_text_default_material_light">#8a000000</color>
     <color name="secondary_text_disabled_material_dark">#36ffffff</color>
     <color name="secondary_text_disabled_material_light">#24000000</color>
+    <color name="semiWhite">#CFFF</color>
     <color name="switch_thumb_disabled_material_dark">#ff616161</color>
     <color name="switch_thumb_disabled_material_light">#ffbdbdbd</color>
     <color name="switch_thumb_normal_material_dark">#ffbdbdbd</color>
@@ -446,15 +447,20 @@
     <string name="abc_shareactionprovider_share_with">Share with</string>
     <string name="abc_shareactionprovider_share_with_application">Share with %s</string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
+    <string name="add">Add Entry</string>
+    <string name="add_entry">Add Entry...</string>
     <string name="app_name">CPM</string>
     <string name="at">\@</string>
     <string name="clear">Clear</string>
     <string name="common_google_play_services_unknown_issue"><ns1:g id="app_name">%1$s</ns1:g> is having trouble with Google Play services. Please try again.</string>
     <string name="default_web_client_id" translatable="false">30635582613-jghvv0o47idvbtjhsjnfgu57acleahkn.apps.googleusercontent.com</string>
+    <string name="delete">Delete</string>
     <string name="e">E</string>
     <string name="empty"/>
     <string name="enter">Enter</string>
     <string name="enter_passcode">Enter Passcode...</string>
+    <string name="entry_heading"><u>Selected Entry Details</u></string>
+    <string name="entry_name">Enter name of Entry...</string>
     <string name="firebase_database_url" translatable="false">https://cruwyspm.firebaseio.com</string>
     <string name="gcm_defaultSenderId" translatable="false">30635582613</string>
     <string name="google_api_key" translatable="false">AIzaSyDDySMc90PMXEV-yDGyuy1JfwxDDflRCUA</string>
@@ -465,9 +471,18 @@
     <string name="hash">#</string>
     <string name="i">I</string>
     <string name="incorrect">"Passcode Incorrect, try again."</string>
+    <string name="key_hint1">Field 1 heading...</string>
+    <string name="key_hint2">Field 2 heading?</string>
+    <string name="key_hint3">Field 3 heading?</string>
+    <string name="key_hint4">Field 4 heading?</string>
+    <string name="key_hint5">Field 5 heading?</string>
+    <string name="list_heading"><u>Database Entries</u></string>
+    <string name="modify_entry">Modify Entry...</string>
     <string name="n">N</string>
     <string name="o">O</string>
     <string name="one">1</string>
+    <string name="pair_key">Pair Key : </string>
+    <string name="pair_value">Pair Value</string>
     <string name="percent">%</string>
     <string name="r">R</string>
     <string name="s">S</string>
@@ -477,6 +492,12 @@
     <string name="t">T</string>
     <string name="textview">TextView</string>
     <string name="two">2</string>
+    <string name="update">Update</string>
+    <string name="val_hint1">Field 1 value...</string>
+    <string name="val_hint2">Field 2 value?</string>
+    <string name="val_hint3">Field 3 value?</string>
+    <string name="val_hint4">Field 4 value?</string>
+    <string name="val_hint5">Field 5 value?</string>
     <string name="zero">0</string>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>
     <style name="AlertDialog.AppCompat.Light" parent="Base.AlertDialog.AppCompat.Light"/>
@@ -1764,6 +1785,10 @@
     <style name="Theme.AppCompat.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+    </style>
+    <style name="Theme.MyDialog" parent="@style/Theme.AppCompat.Light.Dialog">
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowBackground">@color/semiWhite</item>
     </style>
     <style name="ThemeOverlay.AppCompat" parent="Base.ThemeOverlay.AppCompat"/>
     <style name="ThemeOverlay.AppCompat.ActionBar" parent="Base.ThemeOverlay.AppCompat.ActionBar"/>

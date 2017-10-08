@@ -16,7 +16,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity"
+                  android:excludeFromRecents="true"/>
+        <activity android:name=".ModifyActivity"
+                  android:theme="@style/Theme.MyDialog"
+                  android:excludeFromRecents="true"></activity>
     </application>
 
 </manifest>

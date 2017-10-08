@@ -7,27 +7,171 @@
     tools:context="com.mrcruwys.cpm.MainActivity">
 
     <TextView
-        android:id="@+id/text_temp"
+        android:id="@+id/txt_entry_heading"
+        android:layout_width="wrap_content"
+        android:layout_height="38dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/entry_heading"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        android:gravity="center"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp" />
+
+    <Button
+        android:id="@+id/btn_modify"
+        android:layout_width="wrap_content"
+        android:layout_height="38dp"
+        android:layout_marginRight="16dp"
+        android:text="@string/modify_entry"
+        app:layout_constraintBottom_toBottomOf="@+id/txt_entry_heading"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_pairh1"
+        android:layout_width="120sp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="21dp"
+        android:layout_marginTop="-25dp"
+        android:text="@string/empty"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_entry_heading"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp" />
+
+    <TextView
+        android:id="@+id/txt_pairv1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/textview"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginLeft="16dp"
+        android:text="@string/empty"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="@+id/txt_pairh1"
+        app:layout_constraintLeft_toRightOf="@+id/txt_pairh1" />
+
+    <TextView
+        android:id="@+id/txt_pairh2"
+        android:layout_width="120sp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:text="@string/empty"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.127" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_pairh1"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp" />
+
+    <TextView
+        android:id="@+id/txt_pairv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:text="@string/empty"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="@+id/txt_pairh2"
+        app:layout_constraintLeft_toRightOf="@+id/txt_pairh2" />
+
+    <TextView
+        android:id="@+id/txt_pairh3"
+        android:layout_width="120sp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:text="@string/empty"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_pairh2"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp" />
+
+    <TextView
+        android:id="@+id/txt_pairv3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:text="@string/empty"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="@+id/txt_pairh3"
+        app:layout_constraintLeft_toRightOf="@+id/txt_pairh3" />
+
+    <TextView
+        android:id="@+id/txt_pairh4"
+        android:layout_width="120sp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:text="@string/empty"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_pairh3"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp" />
+
+    <TextView
+        android:id="@+id/txt_pairv4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:text="@string/empty"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="@+id/txt_pairh4"
+        app:layout_constraintLeft_toRightOf="@+id/txt_pairh4" />
+
+    <TextView
+        android:id="@+id/txt_pairh5"
+        android:layout_width="120sp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:text="@string/empty"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_pairh4"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp" />
+
+    <TextView
+        android:id="@+id/txt_pairv5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:text="@string/empty"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="@+id/txt_pairh5"
+        app:layout_constraintLeft_toRightOf="@+id/txt_pairh5" />
+
+    <TextView
+        android:id="@+id/txt_list_heading"
+        android:layout_width="wrap_content"
+        android:layout_height="38dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/list_heading"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@+id/txt_pairh5"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <Button
+        android:id="@+id/btn_addnew"
+        android:layout_width="wrap_content"
+        android:layout_height="38dp"
+        android:layout_marginRight="16dp"
+        android:text="@string/add_entry"
+        app:layout_constraintBottom_toBottomOf="@+id/txt_list_heading"
+        app:layout_constraintRight_toRightOf="parent" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/pwList"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="4dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/txt_list_heading"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginBottom="16dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@+id/text_temp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp" />
 
 </android.support.constraint.ConstraintLayout>

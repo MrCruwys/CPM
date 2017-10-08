@@ -36,7 +36,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.mrcruwys.cpm.MainActivity" />
+        <activity
+            android:name="com.mrcruwys.cpm.MainActivity"
+            android:excludeFromRecents="true" />
+        <activity
+            android:name="com.mrcruwys.cpm.ModifyActivity"
+            android:excludeFromRecents="true"
+            android:theme="@style/Theme.MyDialog" />
 
         <receiver
             android:name="com.google.android.gms.measurement.AppMeasurementReceiver"

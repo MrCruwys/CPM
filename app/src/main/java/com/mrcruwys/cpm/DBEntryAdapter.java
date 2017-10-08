@@ -12,16 +12,36 @@ public class DBEntryAdapter extends RecyclerView.Adapter<DBEntryAdapter.MyViewHo
 
     private List<DBEntry> pwordList;
 
+    public interface OnDataChangeListener{
+        public void onDataChanged(int position);
+    }
+
+    OnDataChangeListener mOnDataChangeListener;
+
+    public void setOnDataChangeListener(OnDataChangeListener onDataChangeListener){
+        mOnDataChangeListener = onDataChangeListener;
+    }
+
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        public TextView title, pword;
+        public TextView title;
+        //public TextView pword;
 
         public MyViewHolder(View view) {
             super(view);
             title = (TextView) view.findViewById(R.id.txt_title);
-            pword = (TextView) view.findViewById(R.id.txt_password);
+            //pword = (TextView) view.findViewById(R.id.txt_password);
         }
     }
 
+    public void add(int position, String item) {
+        //pwordList.add(position, item);
+        //notifyItemInserted(position);
+    }
+
+    public void remove(int position) {
+        //pwordList.remove(position);
+        //notifyItemRemoved(position);
+    }
 
     public DBEntryAdapter(List<DBEntry> pwList) {
         this.pwordList = pwList;
@@ -35,10 +55,16 @@ public class DBEntryAdapter extends RecyclerView.Adapter<DBEntryAdapter.MyViewHo
     }
 
     @Override
-    public void onBindViewHolder(MyViewHolder holder, int position) {
+    public void onBindViewHolder(MyViewHolder holder, final int position) {
         DBEntry singleEntry = pwordList.get(position);
         holder.title.setText(singleEntry.getName());
-        holder.pword.setText(singleEntry.getName()); // TODO : Change to actual password
+        holder.title.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mOnDataChangeListener.onDataChanged(position);
+            }
+        });
+        //holder.pword.setText(singleEntry.getName()); // TODO : Change to actual password
     }
 
     @Override

@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp"
+    android:paddingLeft="8dp"
+    android:paddingRight="8dp"
+    tools:context="com.mrcruwys.cpm.ModifyActivity">
+
+    <EditText
+        android:id="@+id/txt_entry_title"
+        android:layout_width="240sp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:hint="@string/entry_name"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/txt_fieldk1"
+        android:layout_width="130sp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="8dp"
+        android:hint="@string/key_hint1"
+        android:inputType="textPersonName"
+        android:text="@string/empty"
+        android:textSize="14sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_entry_title" />
+
+    <EditText
+        android:id="@+id/txt_fieldv1"
+        android:layout_width="130sp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:hint="@string/val_hint1"
+        android:inputType="textPersonName"
+        android:text="@string/empty"
+        android:textSize="14sp"
+        app:layout_constraintLeft_toRightOf="@+id/txt_fieldk1"
+        app:layout_constraintBaseline_toBaselineOf="@+id/txt_fieldk1" />
+
+    <EditText
+        android:id="@+id/txt_fieldk2"
+        android:layout_width="130sp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="8dp"
+        android:hint="@string/key_hint2"
+        android:inputType="textPersonName"
+        android:text="@string/empty"
+        android:textSize="14sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_fieldk1" />
+
+    <EditText
+        android:id="@+id/txt_fieldv2"
+        android:layout_width="130sp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:hint="@string/val_hint2"
+        android:inputType="textPersonName"
+        android:text="@string/empty"
+        android:textSize="14sp"
+        app:layout_constraintLeft_toRightOf="@+id/txt_fieldk2"
+        app:layout_constraintBaseline_toBaselineOf="@+id/txt_fieldk2" />
+
+    <EditText
+        android:id="@+id/txt_fieldk3"
+        android:layout_width="130sp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="8dp"
+        android:hint="@string/key_hint3"
+        android:inputType="textPersonName"
+        android:text="@string/empty"
+        android:textSize="14sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_fieldk2" />
+
+    <EditText
+        android:id="@+id/txt_fieldv3"
+        android:layout_width="130sp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:hint="@string/val_hint3"
+        android:inputType="textPersonName"
+        android:text="@string/empty"
+        android:textSize="14sp"
+        app:layout_constraintLeft_toRightOf="@+id/txt_fieldk3"
+        app:layout_constraintBaseline_toBaselineOf="@+id/txt_fieldk3" />
+
+    <EditText
+        android:id="@+id/txt_fieldk4"
+        android:layout_width="130sp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="8dp"
+        android:hint="@string/key_hint4"
+        android:inputType="textPersonName"
+        android:text="@string/empty"
+        android:textSize="14sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_fieldk3" />
+
+    <EditText
+        android:id="@+id/txt_fieldv4"
+        android:layout_width="130sp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:hint="@string/val_hint4"
+        android:inputType="textPersonName"
+        android:text="@string/empty"
+        android:textSize="14sp"
+        app:layout_constraintLeft_toRightOf="@+id/txt_fieldk4"
+        app:layout_constraintBaseline_toBaselineOf="@+id/txt_fieldk4" />
+
+    <EditText
+        android:id="@+id/txt_fieldk5"
+        android:layout_width="130sp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="8dp"
+        android:hint="@string/key_hint5"
+        android:inputType="textPersonName"
+        android:text="@string/empty"
+        android:textSize="14sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_fieldk4" />
+
+    <EditText
+        android:id="@+id/txt_fieldv5"
+        android:layout_width="130sp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:hint="@string/val_hint5"
+        android:inputType="textPersonName"
+        android:text="@string/empty"
+        android:textSize="14sp"
+        app:layout_constraintLeft_toRightOf="@+id/txt_fieldk5"
+        app:layout_constraintBaseline_toBaselineOf="@+id/txt_fieldk5" />
+
+    <Button
+        android:id="@+id/btn_mod_update"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/update"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_fieldk5"  />
+
+    <Button
+        android:id="@+id/btn_mod_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/delete"
+        app:layout_constraintLeft_toRightOf="@+id/btn_mod_update"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btn_mod_update" />
+
+    <Button
+        android:id="@+id/btn_mod_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/add"
+        app:layout_constraintLeft_toRightOf="@+id/btn_mod_delete"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btn_mod_delete" />
+</android.support.constraint.ConstraintLayout>

@@ -22,4 +22,24 @@
     <string name="clear">Clear</string>
     <string name="enter">Enter</string>
     <string name="textview">TextView</string>
+    <string name="entry_heading"><u>Selected Entry Details</u></string>
+    <string name="list_heading"><u>Database Entries</u></string>
+    <string name="pair_key">Pair Key : </string>
+    <string name="pair_value">Pair Value</string>
+    <string name="add_entry">Add Entry...</string>
+    <string name="modify_entry">Modify Entry...</string>
+    <string name="entry_name">Enter name of Entry...</string>
+    <string name="key_hint1">Field 1 heading...</string>
+    <string name="val_hint1">Field 1 value...</string>
+    <string name="key_hint2">Field 2 heading?</string>
+    <string name="val_hint2">Field 2 value?</string>
+    <string name="key_hint3">Field 3 heading?</string>
+    <string name="val_hint3">Field 3 value?</string>
+    <string name="key_hint4">Field 4 heading?</string>
+    <string name="val_hint4">Field 4 value?</string>
+    <string name="key_hint5">Field 5 heading?</string>
+    <string name="val_hint5">Field 5 value?</string>
+    <string name="update">Update</string>
+    <string name="delete">Delete</string>
+    <string name="add">Add Entry</string>
 </resources>
