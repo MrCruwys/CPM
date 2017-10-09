@@ -16,7 +16,7 @@ public class DBEntryAdapter extends RecyclerView.Adapter<DBEntryAdapter.MyViewHo
         public void onDataChanged(int position);
     }
 
-    OnDataChangeListener mOnDataChangeListener;
+    private OnDataChangeListener mOnDataChangeListener;
 
     public void setOnDataChangeListener(OnDataChangeListener onDataChangeListener){
         mOnDataChangeListener = onDataChangeListener;
@@ -24,12 +24,10 @@ public class DBEntryAdapter extends RecyclerView.Adapter<DBEntryAdapter.MyViewHo
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView title;
-        //public TextView pword;
 
         public MyViewHolder(View view) {
             super(view);
             title = (TextView) view.findViewById(R.id.txt_title);
-            //pword = (TextView) view.findViewById(R.id.txt_password);
         }
     }
 
@@ -64,7 +62,6 @@ public class DBEntryAdapter extends RecyclerView.Adapter<DBEntryAdapter.MyViewHo
                 mOnDataChangeListener.onDataChanged(position);
             }
         });
-        //holder.pword.setText(singleEntry.getName()); // TODO : Change to actual password
     }
 
     @Override

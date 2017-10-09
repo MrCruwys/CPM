@@ -20,20 +20,24 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
+    // MEMBER FIELD DECLARATIONS
     private DatabaseReference mDatabase;
     private ArrayList<DBEntry> entries;
     private List<TextView> mEntryKeys;
     private List<TextView> mEntryValues;
+    private RecyclerView pwordList;
     private DBEntryAdapter entryAdapter;
     private TextView mEntryHeading;
     private Button mModify;
     private Button mAdd;
     private int selectedPos = -1;
 
+    // MEMBER CONSTANT DECLARATIONS
     private static final int[] KEY_IDS = {
             R.id.txt_pairh1,
             R.id.txt_pairh2,
@@ -50,6 +54,8 @@ public class MainActivity extends AppCompatActivity {
             R.id.txt_pairv5,
     };
     public static final String EXTRA_MESSAGE = "com.mrcruwys.cpm.MESSAGE";
+    public static final String ADD_MESSAGE = "com.mrcruwys.cpm.ADD";
+    public static final String MODIFY_MESSAGE = "com.mrcruwys.cpm.MODIFY";
     private static final int ADD_REQUEST = 1;
     private static final int EDIT_REQUEST = 2;
 
@@ -58,21 +64,23 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        entries = new ArrayList<>();
+        // CREATE THE ENTRY HEADING LINK AND ENSURE IT'S UNDERLINED
+        mEntryHeading = (TextView)findViewById(R.id.txt_entry_heading);
+        mEntryHeading.setPaintFlags(mEntryHeading.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
 
+        // CREATE AN ARRAY REFERENCING THE KEY AND VALUE TEXTBOXES
         mEntryKeys = new ArrayList<>(KEY_IDS.length);
         for(int id : KEY_IDS) {
             TextView key = (TextView)findViewById(id);
             mEntryKeys.add(key);
         }
-
         mEntryValues = new ArrayList<>(VALUE_IDS.length);
         for(int id : VALUE_IDS) {
             TextView values = (TextView)findViewById(id);
             mEntryValues.add(values);
         }
-        final TextView mEntryHeading = (TextView)findViewById(R.id.txt_entry_heading);
-        mEntryHeading.setPaintFlags(mEntryHeading.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
+
+        // WHEN THE USER CHOOSES TO EDIT THE SELECTED ENTRY...
         mModify = (Button) findViewById(R.id.btn_modify);
         mModify.setVisibility(View.INVISIBLE);
         mModify.setOnClickListener(new View.OnClickListener() {
@@ -80,11 +88,15 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(MainActivity.this, ModifyActivity.class);
                 Bundle b = new Bundle();
+
+                // PASS THE MODIFY ACTIVITY THE SELECTED ENTRY
                 b.putParcelable(EXTRA_MESSAGE, entries.get(selectedPos));
                 i.putExtras(b);
                 startActivityForResult(i, EDIT_REQUEST);
             }
         });
+
+        // WHEN THE USER CHOOSES TO ADD A NEW ENTRY...
         mAdd = (Button) findViewById(R.id.btn_addnew);
         mAdd.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -94,10 +106,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // CREATE A LINK BETWEEN THIS ANDROID APP AND THE FIREBASE DATABASE ONLINE
+        entries = new ArrayList<>();
         mDatabase = FirebaseDatabase.getInstance().getReference();
         mDatabase.child("Entries").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dsAllEntries) {
+
+                // GO THROUGH EACH DB ENTRY AND PLACE IT IN OUR MAIN DATA STRUCTURE "entries"
                 for (DataSnapshot dsSingleEntry : dsAllEntries.getChildren()) {
                     final DBEntry tEntry = new DBEntry(dsSingleEntry.getKey());
                     for (DataSnapshot dsFields : dsSingleEntry.getChildren()) {
@@ -105,7 +121,9 @@ public class MainActivity extends AppCompatActivity {
                     }
                     entries.add(tEntry);
                 }
-                RecyclerView pwordList = (RecyclerView) findViewById(R.id.pwList);
+
+                // NOW PLACE OUR PARSED ENTRIES INTO THE RECYCLERVIEW WITH AN ADAPTER
+                pwordList = (RecyclerView) findViewById(R.id.pwList);
                 LinearLayoutManager pwListManager = new LinearLayoutManager(getApplicationContext());
                 pwListManager.setOrientation(LinearLayoutManager.VERTICAL);
                 pwordList.setLayoutManager(pwListManager);
@@ -113,6 +131,8 @@ public class MainActivity extends AppCompatActivity {
                 pwordList.addItemDecoration(new Divider(getApplicationContext(), LinearLayoutManager.VERTICAL));
                 pwordList.setAdapter(entryAdapter);
                 entryAdapter.notifyDataSetChanged();
+
+                // CREATE LISTENER FOR WHEN A RECYCLERVIEW ITEM IS CLICKED
                 entryAdapter.setOnDataChangeListener(new DBEntryAdapter.OnDataChangeListener(){
                     public void onDataChanged(int position){
                         mEntryHeading.setText(entries.get(position).getName());
@@ -137,19 +157,69 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
+        // IF USER IS LOOKING TO ADD A NEW ENTRY
         if (requestCode == ADD_REQUEST) {
             if(resultCode == Activity.RESULT_OK){
-                DBEntry tempEntry = (DBEntry)data.getExtras().get(EXTRA_MESSAGE);
-                mDatabase.child("Entries").child(tempEntry.getName()).setValue("");
-                for (DBPair pairs : tempEntry.getPairs()) {
-                    mDatabase.child("Entries").child(tempEntry.getName()).child(pairs.getKey()).setValue(pairs.getValue());
-                }
-            }
-            if (resultCode == Activity.RESULT_CANCELED) {
-                //Write your code if there's no result
+                AddEntry((DBEntry)data.getExtras().get(ADD_MESSAGE));
             }
         } else if(requestCode == EDIT_REQUEST) {
+            if(resultCode == Activity.RESULT_OK) {
+                String tempStr = (String)data.getExtras().get(MODIFY_MESSAGE);
 
+                // IF USER IS LOOKING TO DELETE AN ENTRY
+                if (tempStr.equals("delete")) {
+                    if (selectedPos != -1) { // Is there any way this could actually be -1???
+                        DeleteEntry(selectedPos);
+                    }
+
+                    // IF USER IS LOOKING TO UPDATE AN ENTRY
+                } else {
+                    if (selectedPos != -1) { // Is there any way this could actually be -1???
+                        DeleteEntry(selectedPos);
+                        AddEntry((DBEntry)data.getExtras().get(ADD_MESSAGE));
+                    }
+                }
+            }
+        }
+    }
+
+    private void AddEntry(DBEntry entryToAdd) {
+        mDatabase.child("Entries").child(entryToAdd.getName()).setValue("");
+        for (DBPair pairs : entryToAdd.getPairs()) {
+            mDatabase.child("Entries").child(entryToAdd.getName()).child(pairs.getKey()).setValue(pairs.getValue());
+        }
+        int i = 0;
+        boolean found = false;
+        while ((!found) && (i < entries.size())){
+            if (entries.get(i).getName().compareToIgnoreCase(entryToAdd.getName()) > 0) {
+                found = true;
+            } else {
+                i++;
+            }
+        }
+        entries.add(i, entryToAdd);
+        entryAdapter.notifyItemInserted(i);
+        pwordList.scrollToPosition(0);
+        ClearSelected();
+    }
+
+    private void DeleteEntry(int position) {
+        mDatabase.child("Entries").child(entries.get(position).getName()).setValue(null);
+        entries.remove(position);
+        pwordList.removeViewAt(position);
+        entryAdapter.notifyItemRemoved(position);
+        entryAdapter.notifyItemRangeChanged(position, entries.size());
+        pwordList.scrollToPosition(0);
+        ClearSelected();
+    }
+
+    private void ClearSelected(){
+        mEntryHeading.setText(R.string.entry_heading);
+        mModify.setVisibility(View.GONE);
+        selectedPos = -1;
+        for (int i = 0; i < 5; i++) {
+            mEntryKeys.get(i).setText("");
+            mEntryValues.get(i).setText("");
         }
     }
 }

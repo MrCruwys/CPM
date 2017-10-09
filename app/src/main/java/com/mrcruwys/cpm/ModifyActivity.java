@@ -21,6 +21,8 @@ public class ModifyActivity extends AppCompatActivity {
     private Button mDelete;
     private Button mAdd;
     public static final String EXTRA_MESSAGE = "com.mrcruwys.cpm.MESSAGE";
+    public static final String MODIFY_MESSAGE = "com.mrcruwys.cpm.MODIFY";
+    public static final String ADD_MESSAGE = "com.mrcruwys.cpm.ADD";
 
     private static final int[] KEY_IDS = {
             R.id.txt_fieldk1,
@@ -60,7 +62,7 @@ public class ModifyActivity extends AppCompatActivity {
         mAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Check the user has added valid data
+                // TODO - Check the user has added valid data (including unique entry name)
                 Intent intnt = new Intent();
                 Bundle b = new Bundle();
                 mEntry = new DBEntry(mEntryHeading.getText().toString());
@@ -69,7 +71,7 @@ public class ModifyActivity extends AppCompatActivity {
                         mEntry.addPair(mEntryKeys.get(i).getText().toString(), mEntryValues.get(i).getText().toString());
                     }
                 }
-                b.putParcelable(EXTRA_MESSAGE, mEntry);
+                b.putParcelable(ADD_MESSAGE, mEntry);
                 intnt.putExtras(b);
                 setResult(RESULT_OK, intnt);
                 finish();
@@ -85,6 +87,35 @@ public class ModifyActivity extends AppCompatActivity {
                 mEntryValues.get(i).setText(pairs.getValue());
                 i++;
             }
+            mDelete.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // TODO - Check the user actually wants to delete the entry
+                    Intent intent = new Intent();
+                    intent.putExtra(MODIFY_MESSAGE, "delete");
+                    setResult(RESULT_OK, intent);
+                    finish();
+                }
+            });
+            mUpdate.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // TODO - Check the user has added valid data
+                    Intent intnt = new Intent();
+                    Bundle b = new Bundle();
+                    mEntry = new DBEntry(mEntryHeading.getText().toString());
+                    for (int i = 0; i < 5; i++){
+                        if (!((mEntryKeys.get(i).getText().toString().equals("") || mEntryValues.get(i).getText().toString().equals("")))) {
+                            mEntry.addPair(mEntryKeys.get(i).getText().toString(), mEntryValues.get(i).getText().toString());
+                        }
+                    }
+                    b.putParcelable(ADD_MESSAGE, mEntry);
+                    b.putString(MODIFY_MESSAGE, "update");
+                    intnt.putExtras(b);
+                    setResult(RESULT_OK, intnt);
+                    finish();
+                }
+            });
             mAdd.setEnabled(false);
         }else{
             mUpdate.setEnabled(false);

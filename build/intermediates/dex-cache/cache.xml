@@ -3,30 +3,210 @@
 
     <item
         is-multidex="true"
-        jar="C:\Users\Colb\AndroidStudioProjects\CPM\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jar="C:\Users\CCruwys\AndroidStudioProjects\CPM\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="26.0.1"
         sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
-        <dex dex="C:\Users\Colb\AndroidStudioProjects\CPM\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_fadfe31c03eaa59fabfa9db21d8889af5d1add9e\classes.dex" />
+        <dex dex="C:\Users\CCruwys\AndroidStudioProjects\CPM\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_424d35102d65880671be6ed99ded6f69ba480bef\classes.dex" />
     </item>
     <item
-        is-multidex="true"
-        jar="C:\Users\Colb\AndroidStudioProjects\CPM\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="C:\Users\CCruwys\.android\build-cache\4935f9e820fc79c532073e8e972638661437b0b5\output\jars\classes.jar"
+        jumboMode="false"
         optimize="true"
         revision="26.0.1"
-        sha1="795f32e8295cd33caa7b1589275b1eefd04b815a">
-        <dex dex="C:\Users\Colb\AndroidStudioProjects\CPM\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_ea707ec19f6b9ae888229c968e041d819c450ab9\classes.dex" />
+        sha1="4a26a1154d053ab11aaf4c3967c42a4d66390991">
+        <dex dex="C:\Users\CCruwys\AndroidStudioProjects\CPM\app\build\intermediates\pre-dexed\debug\classes_6f35ae1441b2a02a66798bb32a4927832733b39e.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="C:\Users\Colb\.android\build-cache\0a9282e873711c355b11ffb7f83046c53309d74e\output\jars\classes.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="C:\Users\CCruwys\AppData\Local\Android\sdk\extras\m2repository\com\android\support\constraint\constraint-layout-solver\1.0.2\constraint-layout-solver-1.0.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
+        <dex dex="C:\Users\CCruwys\AndroidStudioProjects\CPM\app\build\intermediates\pre-dexed\debug\constraint-layout-solver-1.0.2_12a816a1278c222e8b25ed07042dd6ac36dd23f7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\CCruwys\.android\build-cache\02d1123f08b95e11ca8a5ad78b1932a5865d5477\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="45f697922e6f072daa12f8a2995dc77ab03c11da">
+        <dex dex="C:\Users\CCruwys\AndroidStudioProjects\CPM\app\build\intermediates\pre-dexed\debug\classes_921980f5d5412195d904df28a5df90add4272f7e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\CCruwys\.android\build-cache\777c861d8bbd58050f91ffc16064c81a8451e6f0\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="da27a32db6af8954ee8061537c7d476fcb1df46f">
+        <dex dex="C:\Users\CCruwys\AndroidStudioProjects\CPM\app\build\intermediates\pre-dexed\debug\classes_ff9d0b9053c2de7fe027abe2f27234de04feedb3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\CCruwys\.android\build-cache\269b6d0c7e357c3fa8d3d3319adab9aa7f31ee41\output\jars\classes.jar"
+        jumboMode="false"
         optimize="true"
         revision="26.0.1"
         sha1="95519720620b553f63afc789beba9ad582807f7c">
-        <dex dex="C:\Users\Colb\AndroidStudioProjects\CPM\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_760f00bd3741c46d13ef4be5bc193a884cafb58e\classes.dex" />
+        <dex dex="C:\Users\CCruwys\AndroidStudioProjects\CPM\app\build\intermediates\pre-dexed\debug\classes_8b54d2a1f60555071e14c4c5b3b49a1d29efaa9c.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\CCruwys\AndroidStudioProjects\CPM\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="d7e69ee3214ddccec2f645050c24d5c97d7b030a">
+        <dex dex="C:\Users\CCruwys\AndroidStudioProjects\CPM\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_fbbf3e8a817886caf5e91a8463b5c1b8bc589091\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\CCruwys\.android\build-cache\5e8a28952234337a9a6b597aca71c5b67fa0b85b\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="486371f97baad8e607f332f20fee1d3dd00a731a">
+        <dex dex="C:\Users\CCruwys\AndroidStudioProjects\CPM\app\build\intermediates\pre-dexed\debug\classes_5d6f8219f2a3c57bbb4ad2ff04f4236292dc438b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\CCruwys\.android\build-cache\01f320df30e00ace142b410341a6a409fbb8ca21\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="efb8cb62d47d157c29d1521daac7eefd4cb881ee">
+        <dex dex="C:\Users\CCruwys\AndroidStudioProjects\CPM\app\build\intermediates\pre-dexed\debug\classes_d4032913881b443dd2865116f1660f8c280bb4a1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\CCruwys\.android\build-cache\e8d134fbade1652fe186c7c05072bb9e00946545\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="47635644d0d5c103c1dd8360549eb9ba3225c7d3">
+        <dex dex="C:\Users\CCruwys\AndroidStudioProjects\CPM\app\build\intermediates\pre-dexed\debug\classes_b3b25de3a5f51090334e3b9270f4d74665ef6c2a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\CCruwys\.android\build-cache\3591c678b4f0eff11d2a6d93c72240ac47c5c264\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
+        <dex dex="C:\Users\CCruwys\AndroidStudioProjects\CPM\app\build\intermediates\pre-dexed\debug\classes_642d4fd1cf8d719067512a037f34b0fe82df7e5d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\CCruwys\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\25.3.1\support-annotations-25.3.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="bf8841d29fa39e077730e7a91222c2ce269fa7c9">
+        <dex dex="C:\Users\CCruwys\AndroidStudioProjects\CPM\app\build\intermediates\pre-dexed\debug\support-annotations-25.3.1_2b186bc5032a5dbe5bc5536754de539519484288.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\CCruwys\.android\build-cache\88b893333e06c44e7ac71925ecaf35eb653ef828\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="052f5f840f21174a3ecf6544130194e2652cbb73">
+        <dex dex="C:\Users\CCruwys\AndroidStudioProjects\CPM\app\build\intermediates\pre-dexed\debug\classes_d87811946805a84dd004af397aed4d9af1b6fd1a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\CCruwys\.android\build-cache\14205a506a1313c980463d69682864a6e49086d5\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="eb0d830e3eabb9deb9ec44869cf7ac7ea1ad794c">
+        <dex dex="C:\Users\CCruwys\AndroidStudioProjects\CPM\app\build\intermediates\pre-dexed\debug\classes_ba3d25ec25e59e1ebb78861076bc840f98303a03.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\CCruwys\.android\build-cache\247c109d6004f1897f06ff0e174fa7ee27114767\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="6116e0e7069de7fc259aac8e08b84f32c2038231">
+        <dex dex="C:\Users\CCruwys\AndroidStudioProjects\CPM\app\build\intermediates\pre-dexed\debug\classes_b504f89d710ea24511884e9ad78eaf4272f6ed4c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\CCruwys\.android\build-cache\24ec1cfab6661f3e3687b0b237fc6f24c21fa47a\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="756f6297eef79784f5e356dcd4f39865028b2bd0">
+        <dex dex="C:\Users\CCruwys\AndroidStudioProjects\CPM\app\build\intermediates\pre-dexed\debug\classes_25d1450526d556ce0fdee4d801ccd0beca7716d7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\CCruwys\.android\build-cache\ecacfd180476c85cf69581b1848987e51b0e973c\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="6ef31f1555bb4cc513ec8d52711365a8b89f3600">
+        <dex dex="C:\Users\CCruwys\AndroidStudioProjects\CPM\app\build\intermediates\pre-dexed\debug\classes_8558028985928f4d014eab1d53e4f31c79c6ff6c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\CCruwys\.android\build-cache\774eb684f93a70e474fa82cbba3ca3dd5228c689\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="8f128aeeb7e31271b28a7adb9dac1f3a6ed9f5e7">
+        <dex dex="C:\Users\CCruwys\AndroidStudioProjects\CPM\app\build\intermediates\pre-dexed\debug\classes_cdea158a6efd38a9ab7354076914f0a6d7ca49d9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\CCruwys\.android\build-cache\5b2440202b8d3b15266e88c540aff3bf1922fe8b\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="433f4d6aa5f21f19552afe0e6c5eff0fedba73ad">
+        <dex dex="C:\Users\CCruwys\AndroidStudioProjects\CPM\app\build\intermediates\pre-dexed\debug\classes_ffd9300e2df89a24ac57015b0c705a33a84448c2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\CCruwys\.android\build-cache\a8aeaabade9f377971c195d2ae3e5a164e403b24\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="150252b33b00274cc868578ade018fda0d43a3eb">
+        <dex dex="C:\Users\CCruwys\AndroidStudioProjects\CPM\app\build\intermediates\pre-dexed\debug\classes_7df47af43f78ee8304bb9fc0a2d8be3451676a50.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\CCruwys\.android\build-cache\e1e6f07c930d66be4ee756e150f3aeef2ac7537f\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\Users\CCruwys\AndroidStudioProjects\CPM\app\build\intermediates\pre-dexed\debug\classes_d310f184a23ecc2cc31dce6c28646b263211ffd0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\CCruwys\.android\build-cache\6aa40ffa7369235caa927a84d2628637b477197b\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="8010ae6ed32828a145b25ec97bc07b7a83c6318f">
+        <dex dex="C:\Users\CCruwys\AndroidStudioProjects\CPM\app\build\intermediates\pre-dexed\debug\classes_e44351541cf907bb702f55eca831b3bb840ed7c5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\CCruwys\.android\build-cache\91c2c7351ed3b3f38d3b705ab67b4d214c8238a3\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="6addaba208e21c6da776d0ca75b6b23a6ccd5499">
+        <dex dex="C:\Users\CCruwys\AndroidStudioProjects\CPM\app\build\intermediates\pre-dexed\debug\classes_c096297b27302dbffc65961525eae10080c2d45a.jar" />
     </item>
 
 </items>

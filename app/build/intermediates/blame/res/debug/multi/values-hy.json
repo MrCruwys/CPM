@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "C:\\Users\\Colb\\AndroidStudioProjects\\CPM\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-hy\\values-hy.xml",
+        "outputFile": "C:\\Users\\CCruwys\\AndroidStudioProjects\\CPM\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-hy\\values-hy.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 310
                 },
                 "from": {
-                    "file": "C:\\Users\\Colb\\.android\\build-cache\\9c2165afbb886339b75d08bc56c260a36e5d3e01\\output\\res\\values-hy\\values.xml",
+                    "file": "C:\\Users\\CCruwys\\.android\\build-cache\\24ec1cfab6661f3e3687b0b237fc6f24c21fa47a\\output\\res\\values-hy\\values.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 0,
