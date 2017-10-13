@@ -9,6 +9,7 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -36,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
     private Button mModify;
     private Button mAdd;
     private int selectedPos = -1;
+    private Fix fix = new Fix();
 
     // MEMBER CONSTANT DECLARATIONS
     private static final int[] KEY_IDS = {
@@ -62,13 +64,14 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
         setContentView(R.layout.activity_main);
 
         // CREATE THE ENTRY HEADING LINK AND ENSURE IT'S UNDERLINED
         mEntryHeading = (TextView)findViewById(R.id.txt_entry_heading);
         mEntryHeading.setPaintFlags(mEntryHeading.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
 
-        // CREATE AN ARRAY REFERENCING THE KEY AND VALUE TEXTBOXES
+        // CREATE AN ARRAY REFERENCING THE SELECTED KEY AND VALUE TEXTBOXES
         mEntryKeys = new ArrayList<>(KEY_IDS.length);
         for(int id : KEY_IDS) {
             TextView key = (TextView)findViewById(id);
@@ -114,10 +117,11 @@ public class MainActivity extends AppCompatActivity {
             public void onDataChange(DataSnapshot dsAllEntries) {
 
                 // GO THROUGH EACH DB ENTRY AND PLACE IT IN OUR MAIN DATA STRUCTURE "entries"
+                // TODO - decrypt
                 for (DataSnapshot dsSingleEntry : dsAllEntries.getChildren()) {
-                    final DBEntry tEntry = new DBEntry(dsSingleEntry.getKey());
+                    final DBEntry tEntry = new DBEntry(fix.de(dsSingleEntry.getKey(), true));
                     for (DataSnapshot dsFields : dsSingleEntry.getChildren()) {
-                        tEntry.addPair(dsFields.getKey(), (String)dsFields.getValue());
+                        tEntry.addPair(fix.de(dsFields.getKey(), true), fix.de((String)dsFields.getValue(), false));
                     }
                     entries.add(tEntry);
                 }
@@ -132,9 +136,11 @@ public class MainActivity extends AppCompatActivity {
                 pwordList.setAdapter(entryAdapter);
                 entryAdapter.notifyDataSetChanged();
 
-                // CREATE LISTENER FOR WHEN A RECYCLERVIEW ITEM IS CLICKED
+                // CREATE A LISTENER FOR WHEN A RECYCLERVIEW ITEM IS CLICKED
                 entryAdapter.setOnDataChangeListener(new DBEntryAdapter.OnDataChangeListener(){
                     public void onDataChanged(int position){
+
+                        // WHEN CLICKED, PUT THE DETAILS OF SELECTED ENTRY INTO THE TOP FIELDS
                         mEntryHeading.setText(entries.get(position).getName());
                         mModify.setVisibility(View.VISIBLE);
                         selectedPos = position;
@@ -157,37 +163,40 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
-        // IF USER IS LOOKING TO ADD A NEW ENTRY
+        // IF THE USER IS ADDING A NEW ENTRY
         if (requestCode == ADD_REQUEST) {
             if(resultCode == Activity.RESULT_OK){
                 AddEntry((DBEntry)data.getExtras().get(ADD_MESSAGE));
             }
+
+            // IF THE USER IS DOING SOMETHING WITH THE SELECTED ENTRY
         } else if(requestCode == EDIT_REQUEST) {
             if(resultCode == Activity.RESULT_OK) {
                 String tempStr = (String)data.getExtras().get(MODIFY_MESSAGE);
 
-                // IF USER IS LOOKING TO DELETE AN ENTRY
+                // IF THE USER IS DELETING THE SELECTED ENTRY
                 if (tempStr.equals("delete")) {
-                    if (selectedPos != -1) { // Is there any way this could actually be -1???
-                        DeleteEntry(selectedPos);
-                    }
+                    DeleteEntry(selectedPos);
 
-                    // IF USER IS LOOKING TO UPDATE AN ENTRY
+                    // IF USER IS LOOKING TO UPDATE THE SELECTED ENTRY
                 } else {
-                    if (selectedPos != -1) { // Is there any way this could actually be -1???
-                        DeleteEntry(selectedPos);
-                        AddEntry((DBEntry)data.getExtras().get(ADD_MESSAGE));
-                    }
+                    DeleteEntry(selectedPos);
+                    AddEntry((DBEntry)data.getExtras().get(ADD_MESSAGE));
                 }
             }
         }
     }
 
     private void AddEntry(DBEntry entryToAdd) {
-        mDatabase.child("Entries").child(entryToAdd.getName()).setValue("");
+
+        // ADD NEW ENTRY INTO THE DATABASE
+        // TODO - encrypt
+        mDatabase.child("Entries").child(fix.en(entryToAdd.getName(), true)).setValue("");
         for (DBPair pairs : entryToAdd.getPairs()) {
-            mDatabase.child("Entries").child(entryToAdd.getName()).child(pairs.getKey()).setValue(pairs.getValue());
+            mDatabase.child("Entries").child(fix.en(entryToAdd.getName(), true)).child(fix.en(pairs.getKey(), true)).setValue(fix.en(pairs.getValue(), false));
         }
+
+        // FIND THE CORRECT POSITION TO INSERT THIS NEW ENTRY IN THE RECYCLERVIEW LIST
         int i = 0;
         boolean found = false;
         while ((!found) && (i < entries.size())){
@@ -197,6 +206,8 @@ public class MainActivity extends AppCompatActivity {
                 i++;
             }
         }
+
+        // INSERT NEW ENTRY IN THE DATA STRUCTURE AND THE LIST
         entries.add(i, entryToAdd);
         entryAdapter.notifyItemInserted(i);
         pwordList.scrollToPosition(0);
@@ -204,8 +215,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void DeleteEntry(int position) {
-        mDatabase.child("Entries").child(entries.get(position).getName()).setValue(null);
+
+        // DELETE THE SELECTED ENTRY FROM THE DATABASE
+        // TODO - encrypt
+        mDatabase.child("Entries").child(fix.en(entries.get(position).getName(), true)).setValue(null);
+
+        // DELETE THE SELECTED ENTRY FROM THE INTERNAL DATA STRUCTURE
         entries.remove(position);
+
+        // DELETE THE SELECTED ENTRY FROM THE RECYCLERVIEW LIST AND UPDATE THE VIEW
         pwordList.removeViewAt(position);
         entryAdapter.notifyItemRemoved(position);
         entryAdapter.notifyItemRangeChanged(position, entries.size());
@@ -214,6 +232,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void ClearSelected(){
+
+        // RESET THE SELECTED ENTRY FIELDS AT THE TOP OF THE ACTIVITY TO BE BLANK
         mEntryHeading.setText(R.string.entry_heading);
         mModify.setVisibility(View.GONE);
         selectedPos = -1;
@@ -222,4 +242,11 @@ public class MainActivity extends AppCompatActivity {
             mEntryValues.get(i).setText("");
         }
     }
+    /*
+    @Override
+    protected void onPause() {
+        super.onPause();
+        finish();
+    }
+    */
 }

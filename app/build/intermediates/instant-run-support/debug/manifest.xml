@@ -29,7 +29,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
-        <activity android:name="com.mrcruwys.cpm.LoginActivity" >
+        <activity
+            android:name="com.mrcruwys.cpm.LoginActivity"
+            android:excludeFromRecents="true"
+            android:noHistory="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

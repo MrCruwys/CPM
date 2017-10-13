@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -26,6 +25,7 @@ public class LoginActivity extends AppCompatActivity {
     private List<Button> mKeys;             // all the keys the user can press
     private Button mClear;                  // the clear button
     private Button mEnter;                  // the enter button
+    private Fix fix = new Fix();
 
     // DECLARE ALL OTHER MEMBER FIELDS
     private DatabaseReference mDatabase;    // the link to our Firebase database
@@ -78,12 +78,11 @@ public class LoginActivity extends AppCompatActivity {
         });
         mClear.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                mPasscode.setText(getResources().getString(R.string.empty));
-            }
+            public void onClick(View v) { mPasscode.setText(getResources().getString(R.string.empty)); }
         });
     }
 
+    // GENERIC CLICKLISTENER FOR ALL KEYPAD BUTTONS
     private View.OnClickListener myListener = new View.OnClickListener() {
         public void onClick(View v) {
             Button b = (Button)v;
@@ -92,19 +91,31 @@ public class LoginActivity extends AppCompatActivity {
         }
     };
 
+
     private void submitPasscode(){
 
-        // read the passcode from the database
+        // RETRIEVE THE LOGIN PASSWORD FROM THE DATABASE
         mDatabase.child("Login").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                final String passcode = (String)dataSnapshot.getValue();
+
+                final String passcode = fix.de((String)dataSnapshot.getValue(), false);
+
+                // RETRIEVE THE ATTEMPTED LOGIN PASSWORD FROM THE USER
                 String attemptedCode = mPasscode.getText().toString();
+
+                // IF THE PASSWORDS MATCH, START THE MAIN ACTIVITY
                 if (passcode.equals(attemptedCode)) {
                     Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                     intent.putExtra(EXTRA_MESSAGE, attemptedCode);
                     startActivity(intent);
+                    finish();
                 } else {
+
+                    // IF THE PASSWORDS DON'T MATCH RESPOND ACCORDINGLY
+                    /* TODO - Implement a three strikes policy. This probably involves
+                              having an entry inserted in the database stating a time
+                              that the user can try logging in again */
                     mPasscode.setText(getResources().getString(R.string.empty));
                     mMessage.setText(getResources().getString(R.string.incorrect));
                 }

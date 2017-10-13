@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\CCruwys\AndroidStudioProjects\CPM\app\src\main\AndroidManifest.xml:2:1-26:12
+ADDED from C:\Users\CCruwys\AndroidStudioProjects\CPM\app\src\main\AndroidManifest.xml:2:1-28:12
 	package
 		ADDED from C:\Users\CCruwys\AndroidStudioProjects\CPM\app\src\main\AndroidManifest.xml:3:5-31
 		INJECTED from C:\Users\CCruwys\AndroidStudioProjects\CPM\app\src\main\AndroidManifest.xml
@@ -14,7 +14,7 @@ ADDED from C:\Users\CCruwys\AndroidStudioProjects\CPM\app\src\main\AndroidManife
 		INJECTED from C:\Users\CCruwys\AndroidStudioProjects\CPM\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\CCruwys\AndroidStudioProjects\CPM\app\src\main\AndroidManifest.xml
 application
-ADDED from C:\Users\CCruwys\AndroidStudioProjects\CPM\app\src\main\AndroidManifest.xml:5:5-24:19
+ADDED from C:\Users\CCruwys\AndroidStudioProjects\CPM\app\src\main\AndroidManifest.xml:5:5-26:19
 MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\CCruwys\.android\build-cache\a8aeaabade9f377971c195d2ae3e5a164e403b24\output\AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\CCruwys\.android\build-cache\e8d134fbade1652fe186c7c05072bb9e00946545\output\AndroidManifest.xml:26:5-20
 MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\CCruwys\.android\build-cache\01f320df30e00ace142b410341a6a409fbb8ca21\output\AndroidManifest.xml:26:5-20
@@ -45,33 +45,37 @@ MERGED from [com.android.support:support-compat:25.3.1] C:\Users\CCruwys\.androi
 	android:theme
 		ADDED from C:\Users\CCruwys\AndroidStudioProjects\CPM\app\src\main\AndroidManifest.xml:11:9-40
 activity#com.mrcruwys.cpm.LoginActivity
-ADDED from C:\Users\CCruwys\AndroidStudioProjects\CPM\app\src\main\AndroidManifest.xml:12:9-18:20
+ADDED from C:\Users\CCruwys\AndroidStudioProjects\CPM\app\src\main\AndroidManifest.xml:12:9-20:20
+	android:excludeFromRecents
+		ADDED from C:\Users\CCruwys\AndroidStudioProjects\CPM\app\src\main\AndroidManifest.xml:14:19-52
+	android:noHistory
+		ADDED from C:\Users\CCruwys\AndroidStudioProjects\CPM\app\src\main\AndroidManifest.xml:13:19-43
 	android:name
 		ADDED from C:\Users\CCruwys\AndroidStudioProjects\CPM\app\src\main\AndroidManifest.xml:12:19-48
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from C:\Users\CCruwys\AndroidStudioProjects\CPM\app\src\main\AndroidManifest.xml:13:13-17:29
+ADDED from C:\Users\CCruwys\AndroidStudioProjects\CPM\app\src\main\AndroidManifest.xml:15:13-19:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\CCruwys\AndroidStudioProjects\CPM\app\src\main\AndroidManifest.xml:14:17-69
+ADDED from C:\Users\CCruwys\AndroidStudioProjects\CPM\app\src\main\AndroidManifest.xml:16:17-69
 	android:name
-		ADDED from C:\Users\CCruwys\AndroidStudioProjects\CPM\app\src\main\AndroidManifest.xml:14:25-66
+		ADDED from C:\Users\CCruwys\AndroidStudioProjects\CPM\app\src\main\AndroidManifest.xml:16:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\CCruwys\AndroidStudioProjects\CPM\app\src\main\AndroidManifest.xml:16:17-77
+ADDED from C:\Users\CCruwys\AndroidStudioProjects\CPM\app\src\main\AndroidManifest.xml:18:17-77
 	android:name
-		ADDED from C:\Users\CCruwys\AndroidStudioProjects\CPM\app\src\main\AndroidManifest.xml:16:27-74
+		ADDED from C:\Users\CCruwys\AndroidStudioProjects\CPM\app\src\main\AndroidManifest.xml:18:27-74
 activity#com.mrcruwys.cpm.MainActivity
-ADDED from C:\Users\CCruwys\AndroidStudioProjects\CPM\app\src\main\AndroidManifest.xml:19:9-20:54
+ADDED from C:\Users\CCruwys\AndroidStudioProjects\CPM\app\src\main\AndroidManifest.xml:21:9-22:54
 	android:excludeFromRecents
-		ADDED from C:\Users\CCruwys\AndroidStudioProjects\CPM\app\src\main\AndroidManifest.xml:20:19-52
+		ADDED from C:\Users\CCruwys\AndroidStudioProjects\CPM\app\src\main\AndroidManifest.xml:22:19-52
 	android:name
-		ADDED from C:\Users\CCruwys\AndroidStudioProjects\CPM\app\src\main\AndroidManifest.xml:19:19-47
+		ADDED from C:\Users\CCruwys\AndroidStudioProjects\CPM\app\src\main\AndroidManifest.xml:21:19-47
 activity#com.mrcruwys.cpm.ModifyActivity
-ADDED from C:\Users\CCruwys\AndroidStudioProjects\CPM\app\src\main\AndroidManifest.xml:21:9-23:64
+ADDED from C:\Users\CCruwys\AndroidStudioProjects\CPM\app\src\main\AndroidManifest.xml:23:9-25:64
 	android:excludeFromRecents
-		ADDED from C:\Users\CCruwys\AndroidStudioProjects\CPM\app\src\main\AndroidManifest.xml:23:19-52
+		ADDED from C:\Users\CCruwys\AndroidStudioProjects\CPM\app\src\main\AndroidManifest.xml:25:19-52
 	android:theme
-		ADDED from C:\Users\CCruwys\AndroidStudioProjects\CPM\app\src\main\AndroidManifest.xml:22:19-56
+		ADDED from C:\Users\CCruwys\AndroidStudioProjects\CPM\app\src\main\AndroidManifest.xml:24:19-56
 	android:name
-		ADDED from C:\Users\CCruwys\AndroidStudioProjects\CPM\app\src\main\AndroidManifest.xml:21:19-49
+		ADDED from C:\Users\CCruwys\AndroidStudioProjects\CPM\app\src\main\AndroidManifest.xml:23:19-49
 uses-sdk
 INJECTED from C:\Users\CCruwys\AndroidStudioProjects\CPM\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\CCruwys\.android\build-cache\a8aeaabade9f377971c195d2ae3e5a164e403b24\output\AndroidManifest.xml:21:5-23:78
