@@ -22,6 +22,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -38,6 +39,8 @@ public class MainActivity extends AppCompatActivity {
     private Button mAdd;
     private int selectedPos = -1;
     private Fix fix = new Fix();
+    private boolean dialogWasOpen = true;
+    static MainActivity activityMain;
 
     // MEMBER CONSTANT DECLARATIONS
     private static final int[] KEY_IDS = {
@@ -66,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
         setContentView(R.layout.activity_main);
+        activityMain = this;
 
         // CREATE THE ENTRY HEADING LINK AND ENSURE IT'S UNDERLINED
         mEntryHeading = (TextView)findViewById(R.id.txt_entry_heading);
@@ -95,6 +99,7 @@ public class MainActivity extends AppCompatActivity {
                 // PASS THE MODIFY ACTIVITY THE SELECTED ENTRY
                 b.putParcelable(EXTRA_MESSAGE, entries.get(selectedPos));
                 i.putExtras(b);
+                dialogWasOpen = true;
                 startActivityForResult(i, EDIT_REQUEST);
             }
         });
@@ -105,6 +110,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(MainActivity.this, ModifyActivity.class);
+                dialogWasOpen = true;
                 startActivityForResult(i, ADD_REQUEST);
             }
         });
@@ -125,6 +131,8 @@ public class MainActivity extends AppCompatActivity {
                     }
                     entries.add(tEntry);
                 }
+
+                sortEntries();
 
                 // NOW PLACE OUR PARSED ENTRIES INTO THE RECYCLERVIEW WITH AN ADAPTER
                 pwordList = (RecyclerView) findViewById(R.id.pwList);
@@ -160,6 +168,16 @@ public class MainActivity extends AppCompatActivity {
             public void onCancelled(DatabaseError databaseError) {}
         });
     }
+
+    private void sortEntries(){
+        Collections.sort(entries, new Comparator<DBEntry>() {
+            @Override
+            public int compare(DBEntry entry1, DBEntry entry2) {
+                return  entry1.getName().toLowerCase().compareTo(entry2.getName().toLowerCase());
+            }
+        });
+    }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
@@ -241,12 +259,23 @@ public class MainActivity extends AppCompatActivity {
             mEntryKeys.get(i).setText("");
             mEntryValues.get(i).setText("");
         }
-    }
-    /*
+    }/*
     @Override
     protected void onPause() {
         super.onPause();
         finish();
     }
     */
+    public static MainActivity getInstance(){
+        return activityMain;
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (!(dialogWasOpen)) {
+            finish();
+        } else {
+            dialogWasOpen = false;
+        }
+    }
 }

@@ -10,8 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".LoginActivity"
-                  android:noHistory="true"
-                  android:excludeFromRecents="true">
+                  android:configChanges="orientation"
+                  android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,10 +19,14 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity"
-                  android:excludeFromRecents="true"/>
+                  android:excludeFromRecents="true"
+                  android:configChanges="orientation"
+                  android:screenOrientation="portrait"/>
         <activity android:name=".ModifyActivity"
                   android:theme="@style/Theme.MyDialog"
-                  android:excludeFromRecents="true"></activity>
+                  android:excludeFromRecents="true"
+                  android:configChanges="orientation"
+                  android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>

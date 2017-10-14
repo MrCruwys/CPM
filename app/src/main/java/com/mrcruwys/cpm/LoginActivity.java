@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -54,6 +55,7 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
         setContentView(R.layout.activity_login);
 
         // INITIALISE ALL FIELDS
@@ -108,8 +110,8 @@ public class LoginActivity extends AppCompatActivity {
                 if (passcode.equals(attemptedCode)) {
                     Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                     intent.putExtra(EXTRA_MESSAGE, attemptedCode);
+                    mPasscode.setText("");
                     startActivity(intent);
-                    finish();
                 } else {
 
                     // IF THE PASSWORDS DON'T MATCH RESPOND ACCORDINGLY

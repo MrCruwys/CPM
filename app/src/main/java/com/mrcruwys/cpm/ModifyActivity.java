@@ -34,6 +34,7 @@ public class ModifyActivity extends AppCompatActivity {
     private Bundle extras;
     private String errorMsg = "";
     private Fix fix = new Fix();
+    private boolean dialogWasOpen = true;
 
     // CONSTANT DECLARATIONS
     public static final String EXTRA_MESSAGE = "com.mrcruwys.cpm.MESSAGE";
@@ -219,8 +220,13 @@ public class ModifyActivity extends AppCompatActivity {
         });
     }
     @Override
-    protected void onPause() {
-        super.onPause();
-        finish();
+    protected void onResume() {
+        super.onResume();
+        if (!(dialogWasOpen)) {
+            finish();
+            MainActivity.getInstance().finish();
+        } else {
+            dialogWasOpen = false;
+        }
     }
 }

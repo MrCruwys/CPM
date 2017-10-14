@@ -31,8 +31,8 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name="com.mrcruwys.cpm.LoginActivity"
-            android:excludeFromRecents="true"
-            android:noHistory="true" >
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -41,10 +41,14 @@
         </activity>
         <activity
             android:name="com.mrcruwys.cpm.MainActivity"
-            android:excludeFromRecents="true" />
+            android:configChanges="orientation"
+            android:excludeFromRecents="true"
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.mrcruwys.cpm.ModifyActivity"
+            android:configChanges="orientation"
             android:excludeFromRecents="true"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.MyDialog" />
 
         <receiver
