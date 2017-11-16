@@ -32,6 +32,7 @@ public class LoginActivity extends AppCompatActivity {
     private DatabaseReference mDatabase;    // the link to our Firebase database
 
     // ALL OTHER DECLARATIONS GO HERE
+    private String pcode;
     public static final String EXTRA_MESSAGE = "com.mrcruwys.cpm.MESSAGE";
     private static final int[] KEY_IDS = {
             R.id.btn_e,
@@ -70,6 +71,7 @@ public class LoginActivity extends AppCompatActivity {
         mClear = (Button) findViewById(R.id.btn_clear);
         mEnter = (Button) findViewById(R.id.btn_enter);
         mDatabase = FirebaseDatabase.getInstance().getReference();
+        pcode = "";
 
         // CREATE CLICKLISTENERS
         mEnter.setOnClickListener(new View.OnClickListener() {
@@ -80,7 +82,7 @@ public class LoginActivity extends AppCompatActivity {
         });
         mClear.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) { mPasscode.setText(getResources().getString(R.string.empty)); }
+            public void onClick(View v) { mPasscode.setText(getResources().getString(R.string.empty)); pcode = ""; }
         });
     }
 
@@ -89,7 +91,8 @@ public class LoginActivity extends AppCompatActivity {
         public void onClick(View v) {
             Button b = (Button)v;
             String x = b.getText().toString();
-            mPasscode.append(x);
+            pcode = pcode + x;
+            mPasscode.append("\u25A0\u25A0");
         }
     };
 
@@ -104,7 +107,8 @@ public class LoginActivity extends AppCompatActivity {
                 final String passcode = fix.de((String)dataSnapshot.getValue(), false);
 
                 // RETRIEVE THE ATTEMPTED LOGIN PASSWORD FROM THE USER
-                String attemptedCode = mPasscode.getText().toString();
+                //String attemptedCode = mPasscode.getText().toString();
+                String attemptedCode = pcode;
 
                 // IF THE PASSWORDS MATCH, START THE MAIN ACTIVITY
                 if (passcode.equals(attemptedCode)) {
@@ -119,6 +123,7 @@ public class LoginActivity extends AppCompatActivity {
                               having an entry inserted in the database stating a time
                               that the user can try logging in again */
                     mPasscode.setText(getResources().getString(R.string.empty));
+                    pcode = "";
                     mMessage.setText(getResources().getString(R.string.incorrect));
                 }
             }
